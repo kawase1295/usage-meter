@@ -15,7 +15,7 @@ Each bar is colored by how full it is, green through yellow to red. The 5h windo
 /plugin install usage-meter@usage-meter
 ```
 
-To move to a newer commit later, run `/plugin marketplace update usage-meter`.
+The plugin is installed from the released `main` branch. To move to a newer release later, run `/plugin marketplace update usage-meter`.
 
 ## Requirements
 
