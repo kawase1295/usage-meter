@@ -38,3 +38,19 @@ test('band passes while a survey holds it', async ($, on) => {
   expect(await ui.find({ type: 'Text', text: /ctx/ })).toBeUndefined()
   await ui.unmount()
 })
+
+test('band keeps what the mods beneath draw, with the meters last', async ($, on) => {
+  mock.clock(on, { now: Date.parse('2026-10-02T03:00:00Z') })
+  on('session.usage', () => ({ value: USAGE }))
+  on('session.model', () => ({ value: 'claude-opus-5-5' }))
+  on('ui.render', () => ({ type: 'Text', props: {}, children: ['beneath'] }))
+
+  for (const surface of ['terminal', 'desktop'] as const) {
+    const ui = await $.ui.mount({ plugin: 'usage-meter', surface, ...BAND })
+    expect(await ui.find({ type: 'Text', text: 'beneath' })).toBeDefined()
+    expect(await ui.find({ type: 'Text', text: /ctx/ })).toBeDefined()
+    const drawn = JSON.stringify(await ui.drawn())
+    expect(drawn.indexOf('beneath')).toBeLessThan(drawn.indexOf('ctx'))
+    await ui.unmount()
+  }
+})
