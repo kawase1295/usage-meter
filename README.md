@@ -1,5 +1,9 @@
 # usage-meter
 
+[![ci](https://github.com/kawase1295/usage-meter/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/kawase1295/usage-meter/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Claude Code 2.1.287+](https://img.shields.io/badge/Claude%20Code-2.1.287%2B-D97757)](https://claude.com/claude-code)
+
 A Claude Code mod that keeps your usage in view: the model, how full the context window is, and the 5-hour and 7-day rate-limit windows, drawn as braille meters in a band above the prompt.
 
 ![usage-meter: the meters filling up over two turns and dropping back after /compact](docs/demo.gif)
