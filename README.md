@@ -2,6 +2,8 @@
 
 A Claude Code mod that keeps your usage in view: the model, how full the context window is, and the 5-hour and 7-day rate-limit windows, drawn as braille meters in a band above the prompt.
 
+![usage-meter: the meters filling up over two turns and dropping back after /compact](docs/demo.gif)
+
 ```
 Opus 5.5 │ ctx ⣷        11% │ 5h ⣿⣤       18% ↻ 16:10 │ 7d ⣿⣿⣦      33%
 ```
